@@ -14,7 +14,6 @@
 # * Install PyMongo driver, eg:
 #   $ sudo pip install pymongo
 ##
-from pymongo import MongoClient
 from multiprocessing.pool import ThreadPool
 from itertools import repeat
 
