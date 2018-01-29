@@ -7,7 +7,7 @@ When the MOT data is loaded from the gzipped CSV files into MongoDB, the total d
 ![MOT Screenshot in MongoDB Compass](mot.png)
 
 The following Python script can be used to load the CSV files into a MongoDB collection (see script's header comments for instructions on how to use):
-* mdb-mot-import-csv
+* mdb-mot-import-csv.py
 
 The following Python scripts provide examples of performing analysis on the MongoDB data set, using the Aggregation Framework (see header comments in each script for instructions on how to run; also see base of each script for an example of the aggregation results)
 
