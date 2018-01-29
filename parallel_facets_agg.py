@@ -20,6 +20,8 @@ from itertools import repeat
 
 ####
 # Runs MongoDB's aggregation command against just one facet pipeline
+# 'facet_pipeline' is array of two elements. Element 1 is facet name. Element
+# 2 is the set of stages for the pipeline.
 ####
 def aggregate_facet(collection, facet_pipeline):
     return [facet_pipeline[0], list(collection.aggregate(facet_pipeline[1]))]
