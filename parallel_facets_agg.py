@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 ##
-# Helper function for PyMongo clients to enable processing of aggregation
-# faceted pipelines where each facet dimension is sent in parallel to MongoDB
-# to be run by MongoDB's Aggregation Framework. Waits for all parallel
-# aggregations to complete and then merges the results before returning.
+# Helper function for PyMongo clients to enable processing of different
+# aggregation faceted pipelines in parallel, where each facet's "sub-pipeline"
+# is sent to MongoDB in a seperate client thread, to be processed by the 
+# Aggregation Framework. Waits for all parallel aggregations to complete and 
+# then merges the results before returning. Under the covers a pool of client
+# threads is used, using Python's multiprocessing.pool.ThreadPool library.
 #
 # RESTRICTION: Top level pipeline must only contain one stage called $facet,
-# which is usually the case, as normally, each facet's "sub-pipeline" will
-# contain the multiple stages to be processed. Throws an error if this
-# condition is not met.
+# which is often the case, where each facet's "sub-pipeline" contains the
+# multiple stages to be processed. Throws an error if this condition is not 
+# met.
 #
 # Prerequisite:
 # * Install PyMongo driver, eg:
