@@ -66,7 +66,6 @@ def mot_vehicle_aggregate():
 
     pprint(result)
     print '\nAggregation finished {0}'.format(datetime.now())
-    db.close
 
 
 ####

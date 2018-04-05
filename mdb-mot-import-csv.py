@@ -65,7 +65,7 @@ def mot_data_load():
 
     client = MongoClient(MONGODB_URL)
     db = client.mot
-    print 'DB initialised {0}'.format(datetime.now())
+    print('DB initialised {0}'.format(datetime.now()))
 
     for filename in os.listdir(importFolderPath):
         if fnmatch.fnmatch(filename, TEST_FILENAME_MATCH):
@@ -75,8 +75,7 @@ def mot_data_load():
                                      os.path.join(importFolderPath, filename),
                                      motYear)
 
-    db.close
-    print 'DB closed {0}'.format(datetime.now())
+    print('DB finished {0}'.format(datetime.now()))
 
 
 ####
